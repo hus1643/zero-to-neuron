@@ -5,7 +5,7 @@ void setup() {
   target = new PVector(0, 0);
   learning_rate = 0.01;
   x = 102;
-  y = 9;
+  y = 109;
   grad = gradientV(x, y);
 }
 // f(x,y) = x^2 + y^2
@@ -30,8 +30,10 @@ void draw() {
   line(0, -height / 2, 0, height / 2);
   fill(231, 76, 60);
   noStroke();
+  
   circle(target.x, target.y, 8);
   fill(14, 144, 14);
+  
   float grad_mag =grad.mag();
   circle(x, y, 8);
   if (grad_mag >= 0.01) {
@@ -40,6 +42,7 @@ void draw() {
     grad = gradientV(x, y);
     println(x, y);
   }
+
 }
 
 void mousePressed() {
