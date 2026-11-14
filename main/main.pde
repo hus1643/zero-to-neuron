@@ -2,18 +2,18 @@ float x, y, learning_rate;
 PVector grad, target;
 void setup() {
   size(800, 600);
-  target = new PVector(0, 0);
+  target = new PVector(40, -100);
   learning_rate = 0.01;
   x = 102;
   y = 109;
   grad = gradientV(x, y);
 }
-// f(x,y) = x^2 + y^2
+// f(x,y) = (x-40)^2 + (y+100)^2
 float df_dx(float x, float y) {
-  return 2*x;
+  return 2*(x-40);
 }
 float df_dy(float x, float y) {
-  return 2*y;
+  return 2*(y+100);
 }
 // gradient vector
 PVector gradientV(float x, float y) {
